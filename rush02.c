@@ -13,50 +13,45 @@
 void ft_putchar(char c);
 
 void caractere(int x)
-{ 
-	int ligne;
+{
 	int compteur;
-	ligne = 0;
-	compteur = 2;
-		
-	ft_putchar('A');
+
+	compteur = 0;
 		while(compteur < x )
 		{
-			ft_putchar('B');
+			if (compteur == 0 || compteur == x - 1)
+				ft_putchar('A');	
+			else
+				ft_putchar('B');
 			compteur++;
 		}
-		ft_putchar('A');
 		ft_putchar('\n');
 		
 }
 
-void caractere2(int x, int y)
+void caractere2(int x)
 {
-	int ligne;
+	
 	int compteur;
-	ligne = 0;
-	compteur = 2;
-
-	ft_putchar('B');
+	compteur = 0;
 		while (compteur < x)
 		{
-			ft_putchar(' ');
-			compteur++;
+			if (compteur == 0 || compteur == x - 1)
+				ft_putchar('B');
+			else
+				ft_putchar(' ');ß
 		}
-		ft_putchar('B');
 		ft_putchar('\n');
-		if 	(compteur >= x)
-				ligne = ligne + y;
 
-//}
+}
 
 //void caractere3(int x, int y)		
 
-//void rush(int x, int y)
-//{
+void rush(int x, int y)
+{
 	//caractere(5);
-	//caractere2(5,2);
-//}		
+	caractere2(5,2);
+}		
 		
 
 int main()

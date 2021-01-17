@@ -57,13 +57,13 @@ void	bot_lane(int x)
 	}
 }
 
-void	show_line(int x, int numero_ligne, int y)
+void	show_line(int x, int number_ligne, int y)
 {
-	if (numero_ligne == 0)
+	if (number_ligne == 0)
 	{
 		top_lane(x);
 	}
-	else if (numero_ligne == y - 1)
+	else if (number_ligne == y - 1)
 	{
 		bot_lane(x);
 	}

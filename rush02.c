@@ -10,57 +10,78 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar(char c);
+void	ft_putchar(char c);
 
-void caractere(int x)
+void	top_lane(int x)
 {
-	int compteur;
+	int counter;
 
-	compteur = 0;
-		while(compteur < x )
-		{
-			if (compteur == 0 || compteur == x - 1)
-				ft_putchar('A');	
-			else
-				ft_putchar('B');
-			compteur++;
-		}
-		ft_putchar('\n');
-		
+	counter = 0;
+	while (counter < x)
+	{
+		if (counter == 0 || counter == x - 1)
+			ft_putchar('A');
+		else
+			ft_putchar('B');
+		counter++;
+	}
 }
 
-void caractere2(int x)
+void	mid_lane(int x)
 {
-	
-	int compteur;
-	compteur = 0;
-		while (compteur < x)
-		{
-			if (compteur == 0 || compteur == x - 1)
-				ft_putchar('B');
-			else
-				ft_putchar(' ');ß
-		}
-		ft_putchar('\n');
+	int counter;
 
+	counter = 0;
+	while (counter < x)
+	{
+		if (counter == 0 || counter == x - 1)
+			ft_putchar('B');
+		else
+			ft_putchar(' ');
+		counter++;
+	}
 }
 
-//void caractere3(int x, int y)		
-
-void rush(int x, int y)
+void	bot_lane(int x)
 {
-	//caractere(5);
-	caractere2(5,2);
-}		
-		
+	int counter;
 
-int main()
-{
-	caractere(5);
-	return (0);
+	counter = 0;
+	while (counter < x)
+	{
+		if (counter == 0 || counter == x - 1)
+			ft_putchar('C');
+		else
+			ft_putchar('B');
+		counter++;
+	}
 }
 
+void	show_line(int x, int numero_ligne, int y)
+{
+	if (numero_ligne == 0)
+	{
+		top_lane(x);
+	}
+	else if (numero_ligne == y - 1)
+	{
+		bot_lane(x);
+	}
+	else
+	{
+		mid_lane(x);
+	}
+	ft_putchar('\n');
+}
 
+void	rush(int x, int y)
+{
+	int counter;
 
-
-
+	counter = 0;
+	while (counter < y)
+	{
+		show_line(x, counter, y);
+		counter++;
+	}
+}
